@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101713">
+    <meta name="description" content="Laila Hayati — Junior Full-Stack Web Developer based in Indonesia.">
+    <title>Laila Hayati — Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <header class="site-header" id="top">
+        <nav class="nav-shell" aria-label="Main navigation">
+            <a class="wordmark" href="#main" aria-label="Laila Hayati, home">Full-Stack<span> Dev</span></a>
+            <div class="desktop-nav">
+                <a href="#about" data-i18n="navAbout">About</a><a href="#skills" data-i18n="navSkills">Skills</a><a
+                    href="#projects" data-i18n="navProjects">Projects</a><a href="#experience"
+                    data-i18n="navExperience">Experience</a><a href="#contact" data-i18n="navContact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="language-switch" aria-label="Language"><button class="lang active" data-lang="en"
+                        aria-pressed="true">EN</button><span>/</span><button class="lang" data-lang="id"
+                        aria-pressed="false">ID</button></div>
+                <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="mobile-menu"><span></span><span></span></button>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu" hidden>
+            <a href="#about" data-i18n="navAbout">About</a><a href="#skills" data-i18n="navSkills">Skills</a><a
+                href="#projects" data-i18n="navProjects">Projects</a><a href="#experience"
+                data-i18n="navExperience">Experience</a><a href="#contact" data-i18n="navContact">Contact</a>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-atmosphere" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="hero-content">
+                <p class="eyebrow hero-in" data-i18n="eyebrow">JUNIOR FULL-STACK WEB DEVELOPER</p>
+                <h1 class="hero-in hero-title-animated" id="hero-title" data-i18n-html="heroTitle">Building
+                    digital<br>experiences with
+                    <em>purpose.</em>
+                </h1>
+                <p class="hero-copy hero-in" data-i18n="heroCopy">I build practical web applications with thoughtful
+                    interfaces, reliable application logic, and meaningful functionality.</p>
+                <div class="hero-actions hero-in"><a class="button button-primary" href="#projects"><span
+                            data-i18n="explore">Explore my work</span><span class="arrow"
+                            aria-hidden="true">↘</span></a><a class="button button-text" href="#contact"><span
+                            data-i18n="getInTouch">Get in touch</span><span class="arrow"
+                            aria-hidden="true">↗</span></a></div>
+                <div class="hero-tech hero-in"><span data-i18n="workingWith">WORKING
+                        WITH</span><b>Laravel</b><i></i><b>PHP</b><i></i><b>MySQL</b><i></i><b>JavaScript</b></div>
+            </div>
+            <a class="scroll-cue" href="#projects"><span class="scroll-line"></span><span data-i18n="scroll">SCROLL TO
+                    EXPLORE</span></a>
+            <div class="hero-index" aria-hidden="true">01 — 06</div>
+        </section>
+
+        <section class="section projects-section" id="projects">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow section-kicker"><span>01</span> <span data-i18n="selectedWork">SELECTED
+                            WORK</span></p>
+                    <h2 data-i18n-html="projectsTitle">A few things<br>made <em>with care.</em></h2>
+                </div>
+                <p class="section-intro" data-i18n="projectsIntro">Practical systems shaped around real workflows, from
+                    reservations to inventory and decision support.</p>
+            </div>
+            <div class="project-list">
+                <article class="project project-wide reveal" data-project="sewapro">
+                    <button class="project-visual visual-booking" data-open-project="sewapro"
+                        aria-label="Open SewaPro case study"><img class="project-screenshot"
+                            src="assets/images/sewapro.png" alt="SewaPro booking and rental management interface"
+                            loading="lazy" decoding="async"></button>
+                    <div class="project-meta">
+                        <div>
+                            <p class="project-type" data-i18n="sewaType">BOOKING & RENTAL MANAGEMENT</p>
+                            <h3>SewaPro</h3>
+                            <p class="project-desc" data-i18n="sewaDesc">Studio bookings and photography equipment
+                                rentals, brought together in one practical management system.</p>
+                        </div><button class="text-link" data-open-project="sewapro"><span data-i18n="caseStudy">View
+                                case study</span><span>↗</span></button>
+                    </div>
+                    <div class="project-tags"><span>Laravel</span><span>MySQL</span><span>Tailwind
+                            CSS</span><span>JavaScript</span></div>
+                </article>
+                <article class="project project-offset reveal" data-project="rastrada">
+                    <button class="project-visual visual-ranking" data-open-project="rastrada"
+                        aria-label="Open RASTRADA case study"><img class="project-screenshot"
+                            src="assets/images/rastrada.png"
+                            alt="RASTRADA decision support and beneficiary monitoring interface" loading="lazy"
+                            decoding="async"></button>
+                    <div class="project-meta">
+                        <div>
+                            <p class="project-type" data-i18n="rasType">DECISION SUPPORT & MONITORING</p>
+                            <h3>SPK & Monitoring<br>RASTRADA</h3>
+                            <p class="project-desc" data-i18n="rasDesc">A decision support and beneficiary monitoring
+                                system, developed as a collaborative academic project.</p>
+                        </div><button class="text-link" data-open-project="rastrada"><span data-i18n="caseStudy">View
+                                case study</span><span>↗</span></button>
+                    </div>
+                    <div class="project-tags">
+                        <span>Laravel</span><span>MySQL</span><span>TOPSIS</span><span>Bootstrap</span>
+                    </div>
+                </article>
+                <article class="project project-offset project-third reveal" data-project="atm">
+                    <button class="project-visual visual-inventory" data-open-project="atm"
+                        aria-label="Open ATM Sparepart Monitoring case study"><img class="project-screenshot"
+                            src="assets/images/sparepart.png" alt="ATM spare-part inventory monitoring interface"
+                            loading="lazy" decoding="async"></button>
+                    <div class="project-meta">
+                        <div>
+                            <p class="project-type" data-i18n="atmType">INVENTORY MONITORING</p>
+                            <h3>ATM Sparepart<br>Monitoring</h3>
+                            <p class="project-desc" data-i18n="atmDesc">An inventory monitoring application developed
+                                during a web developer internship.</p>
+                        </div><button class="text-link" data-open-project="atm"><span data-i18n="caseStudy">View case
+                                study</span><span>↗</span></button>
+                    </div>
+                    <div class="project-tags"><span>PHP Native</span><span>MySQL</span><span>Bootstrap</span></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="section about-grid reveal">
+                <p class="eyebrow section-kicker"><span>02</span> <span data-i18n="aboutLabel">A LITTLE ABOUT ME</span>
+                </p>
+                <div class="about-copy">
+                    <h2 data-i18n-html="aboutTitle">I like making<br>the useful feel <em>simple.</em></h2>
+                    <p data-i18n="aboutCopy">I’m Laila, a Junior Full-Stack Web Developer and Informatics Engineering
+                        graduate from the State Polytechnic of Banjarmasin. I’ve worked on web applications for
+                        bookings, inventory monitoring, and decision support building responsive interfaces, application
+                        logic, and database integrations.</p>
+                    <p class="about-location"><span class="location-pin">⌖</span><span data-i18n="location">Based in
+                            Banjarmasin, Indonesia</span></p>
+                    <a class="about-github" href="https://github.com/lailahyt" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visit Laila's GitHub profile">
+                        <span class="github-mark" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor" focusable="false">
+                                <path
+                                    d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.59 1.21 3.22.92.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.77 1.15 2.99 0 4.27-2.6 5.22-5.08 5.5.4.35.76 1.03.76 2.08V22c0 .29.2.63.76.53A11.1 11.1 0 0 0 12 .9Z" />
+                            </svg>
+                        </span>
+                        <span data-i18n="aboutGithub">Explore my GitHub</span>
+                        <span class="about-github-arrow" aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <div class="about-aside"><span class="aside-rule"></span>
+                    <p data-i18n="aboutAside">Thoughtful details.<br>Useful outcomes.<br>Code that holds up.</p><span
+                        class="aside-signature">L.H.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills-section" id="skills">
+            <div class="skills-heading reveal">
+                <p class="eyebrow section-kicker"><span>03</span> <span data-i18n="skillsLabel">TOOLS OF THE
+                        TRADE</span></p>
+                <h2 data-i18n-html="skillsTitle">A grounded<br><em>toolkit.</em></h2>
+                <p data-i18n="skillsIntro">Technologies I’ve used to build and support web applications.</p>
+            </div>
+            <div class="skill-groups reveal">
+                <div class="skill-group"><span class="skill-num">01</span>
+                    <h3 data-i18n="frontend">Frontend</h3>
+                    <p>HTML5 <i>·</i> CSS3 <i>·</i> JavaScript ES6+ <i>·</i> Vue.js <i>·</i> Tailwind CSS <i>·</i>
+                        Bootstrap</p>
+                </div>
+                <div class="skill-group"><span class="skill-num">02</span>
+                    <h3 data-i18n="backend">Backend</h3>
+                    <p>PHP Native <i>·</i> Laravel</p>
+                </div>
+                <div class="skill-group"><span class="skill-num">03</span>
+                    <h3 data-i18n="database">Database</h3>
+                    <p>MySQL <i>·</i> <span data-i18n="dbModel">Database modeling</span></p>
+                </div>
+                <div class="skill-group"><span class="skill-num">04</span>
+                    <h3 data-i18n="tools">Tools</h3>
+                    <p>Git <i>·</i> GitHub <i>·</i> VS Code <i>·</i> Laragon</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-section" id="experience">
+            <div class="section experience-grid reveal">
+                <div class="experience-heading">
+                    <p class="eyebrow section-kicker"><span>04</span> <span data-i18n="journeyLabel">THE PATH SO
+                            FAR</span></p>
+                    <h2 data-i18n-html="journeyTitle">Learning by<br><em>building.</em></h2>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-item"><span class="timeline-date" data-i18n="internDate">SEP — DEC
+                            2025</span>
+                        <div>
+                            <h3 data-i18n="internTitle">Web Developer Intern</h3>
+                            <p class="timeline-place">PT Swadharma Sarana Informatika <span>·</span> Banjarmasin</p>
+                            <p class="timeline-copy" data-i18n="internCopy">Worked on responsive interfaces, inventory
+                                stock calculations, search and filtering, form validation, and PHP/MySQL application
+                                logic.</p>
+                        </div><span class="timeline-index">01</span>
+                    </article>
+                    <article class="timeline-item"><span class="timeline-date">2023 — 2026</span>
+                        <div>
+                            <h3 data-i18n="degreeTitle">Associate Degree in Informatics Engineering</h3>
+                            <p class="timeline-place" data-i18n="school">State Polytechnic of Banjarmasin</p>
+                            <p class="timeline-copy"><span data-i18n="gpa">Grade point average</span>
+                                <strong>3.73</strong>
+                            </p>
+                        </div><span class="timeline-index">02</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-section" id="contact">
+            <div class="contact-glow" aria-hidden="true"></div>
+
+            <div class="contact-inner reveal">
+                <p class="eyebrow section-kicker">
+                    <span>05</span>
+                    <span data-i18n="contactLabel">OPEN TO WHAT’S NEXT</span>
+                </p>
+
+                <h2 data-i18n-html="contactTitle">
+                    Let’s build something<br><em>useful.</em>
+                </h2>
+
+                <p class="contact-copy" data-i18n="contactCopy">
+                    I’m open to discussing web development opportunities
+                    and projects where I can contribute.
+                </p>
+
+                <div class="contact-availability">
+                    <span class="availability-dot"></span>
+                    <span data-i18n="available">
+                        Available for opportunities
+                    </span>
+                </div>
+
+                <a class="button button-primary contact-button" href="mailto:laihyt24@gmail.com"
+                    data-i18n="emailButton">
+                    Email me
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a class="wordmark" href="#main" aria-label="Laila Hayati, back to top">Laila<span>.Dev</span></a>
+                <p data-i18n="footerBlurb">Building thoughtful, useful web experiences.</p>
+            </div>
+            <div class="footer-links" aria-label="Footer navigation">
+                <a href="#about" data-i18n="navAbout">About</a>
+                <a href="#skills" data-i18n="navSkills">Skills</a>
+                <a href="#projects" data-i18n="navProjects">Projects</a>
+                <a href="#experience" data-i18n="navExperience">Experience</a>
+                <a href="#contact" data-i18n="navContact">Contact</a>
+            </div>
+            <a class="back-top" href="#main"><span data-i18n="backTop">Back to top</span><span
+                    aria-hidden="true">↑</span></a>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footerRole">Junior Full-Stack Web Developer <i>·</i> Indonesia</p>
+            <span class="footer-year">© <span id="copyright-year">2026</span> Laila Hayati</span>
+        </div>
+    </footer>
+
+    <dialog class="case-dialog" aria-labelledby="dialog-title"><button class="dialog-close"
+            aria-label="Close case study">×</button>
+        <p class="eyebrow dialog-kicker">PROJECT NOTES <span class="dialog-index"></span></p>
+        <h2 id="dialog-title"></h2>
+        <p class="dialog-subtitle"></p>
+        <div class="dialog-rule"></div>
+        <p class="dialog-body"></p>
+        <p class="dialog-contribution"></p>
+        <div class="dialog-tags"></div>
+    </dialog>
+</body>
+
+</html>
