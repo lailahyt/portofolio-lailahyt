@@ -574,100 +574,83 @@ ol {
     font-weight: 600;
 }
 
-/* Code card (decorative motion graphic) */
+/* Portrait */
 .about-visual {
     position: relative;
     justify-self: end;
     width: 100%;
-    max-width: 410px;
+    max-width: 380px;
 }
 
-.code-card {
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    background: linear-gradient(160deg, rgba(27, 38, 32, .94), rgba(18, 26, 21, .94));
-    box-shadow: 0 30px 70px rgba(5, 9, 6, .45);
-    overflow: hidden;
+.portrait {
+    position: relative;
+    margin: 0;
     animation: floatY 7s ease-in-out infinite;
 }
 
-.code-bar {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
+/* offset outline frame that draws in behind the photo */
+.portrait::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(145, 174, 131, .42);
+    border-radius: 18px;
+    transform: translate(16px, 16px);
+    animation: frameIn .9s .75s var(--ease) both;
 }
 
-.code-bar i {
-    width: 9px;
-    height: 9px;
+.portrait-card {
+    position: relative;
+    isolation: isolate;
+    aspect-ratio: 472 / 616;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: linear-gradient(165deg, #223027, #141d17);
+    box-shadow: 0 30px 70px rgba(5, 9, 6, .45);
+}
+
+/* breathing glow behind the head */
+.portrait-card::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 14%;
+    width: 82%;
+    aspect-ratio: 1;
     border-radius: 50%;
-    background: #3a483e;
+    background: radial-gradient(circle, rgba(145, 174, 131, .38), transparent 68%);
+    filter: blur(8px);
+    transform: translateX(-50%);
+    animation: breathe 6s ease-in-out infinite alternate;
 }
 
-.code-bar i:first-child {
-    background: var(--accent);
+/* soft fade so the cropped shoulders settle into the card */
+.portrait-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(0deg, rgba(16, 23, 19, .55), transparent 28%);
+    pointer-events: none;
 }
 
-.code-bar span {
-    margin-left: 10px;
-    font: 500 11px/1 var(--mono);
-    color: #7f8d82;
-}
-
-.code-body {
-    margin: 0;
-    padding: 20px 22px 24px;
-    font: 12.5px/1.95 var(--mono);
-    color: #c4cec2;
-    white-space: pre-wrap;
-}
-
-.code-line {
+.portrait-img {
+    position: absolute;
+    left: -9%;
+    bottom: 0;
+    z-index: 1;
     display: block;
-    opacity: 0;
-    animation: codeIn .5s var(--ease) both;
-    animation-delay: calc(1.1s + var(--i, 0) * .32s);
-}
-
-.code-line.in {
-    padding-left: 1.6em;
-}
-
-.code-line.in2 {
-    padding-left: 3.2em;
-}
-
-.code-body .k {
-    color: var(--accent);
-}
-
-.code-body .p {
-    color: #9fb7a4;
-}
-
-.code-body .s {
-    color: #d9c99a;
-}
-
-.code-body .b {
-    color: #e7b27a;
-}
-
-.code-cursor {
-    display: inline-block;
-    width: 7px;
-    height: 1.05em;
-    margin-left: 3px;
-    vertical-align: -2px;
-    background: var(--accent);
-    animation: blink .9s steps(2, start) infinite;
+    width: 118%;
+    height: 118%;
+    object-fit: cover;
+    object-position: center bottom;
+    animation: portraitIn 1.1s .35s var(--ease) both;
 }
 
 .float-chip {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     padding: 7px 13px;
     border: 1px solid rgba(145, 174, 131, .35);
     border-radius: 999px;
@@ -680,18 +663,14 @@ ol {
 }
 
 .chip-a {
-    top: -16px;
-    right: -12px;
+    top: 22px;
+    right: -14px;
 }
 
 .chip-b {
-    bottom: -14px;
-    left: -26px;
+    bottom: 70px;
+    left: -22px;
     animation-delay: -2.4s;
-}
-
-.code-wrap {
-    position: relative;
 }
 
 .about-aside {
@@ -1251,15 +1230,41 @@ ol {
     }
 }
 
-@keyframes codeIn {
+@keyframes portraitIn {
     from {
         opacity: 0;
-        transform: translateX(-8px);
+        transform: translateY(26px) scale(1.05);
+        clip-path: inset(100% 0 0 0);
     }
 
     to {
         opacity: 1;
         transform: none;
+        clip-path: inset(0);
+    }
+}
+
+@keyframes frameIn {
+    from {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(16px, 16px);
+    }
+}
+
+@keyframes breathe {
+    from {
+        opacity: .55;
+        transform: translateX(-50%) scale(.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.06);
     }
 }
 
@@ -1384,6 +1389,12 @@ ol {
     }
 
     .about-visual {
+        order: -1;
+        justify-self: start;
+        max-width: 280px;
+    }
+
+    .about-aside {
         display: none;
     }
 
@@ -1446,8 +1457,27 @@ ol {
     }
 
     .about-inner {
-        padding-top: 108px;
+        padding-top: 100px;
         padding-bottom: 76px;
+        gap: 30px;
+    }
+
+    .about-visual {
+        max-width: min(220px, 60vw);
+    }
+
+    .eyebrow-sep {
+        display: none;
+    }
+
+    .chip-a {
+        top: 14px;
+        right: -10px;
+    }
+
+    .chip-b {
+        bottom: 46px;
+        left: -8px;
     }
 
     .about-title {
@@ -1641,8 +1671,7 @@ ol {
 
     .js .reveal,
     .js .project.reveal .project-tags span,
-    .js .skill-group .skill-chips li,
-    .code-line {
+    .js .skill-group .skill-chips li {
         opacity: 1;
     }
 

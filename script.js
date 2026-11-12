@@ -17,6 +17,7 @@ const copy = {
         iconEmail: 'Send an email',
         iconGithub: 'Visit GitHub profile',
         iconLinkedin: 'Visit LinkedIn profile',
+        portraitAlt: 'Portrait of Laila Hayati',
         internDate: 'SEP — DEC 2025',
         internTitle: 'Web Developer Intern',
         degreeTitle: 'Associate Degree in Informatics Engineering',
@@ -59,6 +60,7 @@ const copy = {
         iconEmail: 'Kirim email',
         iconGithub: 'Kunjungi profil GitHub',
         iconLinkedin: 'Kunjungi profil LinkedIn',
+        portraitAlt: 'Foto Laila Hayati',
         internDate: 'SEP — DES 2025',
         internTitle: 'Web Developer Intern',
         degreeTitle: 'Ahli Madya Teknik Informatika',
@@ -133,6 +135,9 @@ function setLanguage(lang) {
         const value = t[el.dataset.i18nAria];
         if (value) el.setAttribute('aria-label', value);
     });
+
+    const portraitImg = document.querySelector('.portrait-img');
+    if (portraitImg) portraitImg.alt = t.portraitAlt;
 
     document.querySelectorAll('.lang').forEach(btn => {
         const on = btn.dataset.lang === lang;
