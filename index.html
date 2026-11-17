@@ -146,61 +146,112 @@
                 <p class="section-intro" data-i18n="projectsIntro">Practical systems shaped around real workflows, from
                     reservations to inventory and decision support.</p>
             </div>
-            <div class="project-list">
-                <article class="project project-wide reveal" data-project="sewapro">
-                    <button class="project-visual" data-open-project="sewapro" aria-label="Open SewaPro case study"><img
-                            class="project-screenshot" src="assets/images/sewapro.png"
-                            alt="SewaPro booking and rental management interface" loading="lazy"
-                            decoding="async"></button>
-                    <div class="project-meta">
-                        <div>
-                            <p class="project-type" data-i18n="sewaType">BOOKING & RENTAL MANAGEMENT</p>
+            <div class="project-scroller">
+                <div class="project-list" role="region" aria-label="Projects" tabindex="0">
+                    <article class="project reveal" data-project="sewapro">
+                        <button class="project-visual" data-open-project="sewapro"
+                            aria-label="Open SewaPro case study"><img class="project-screenshot"
+                                src="assets/images/sewapro.png" alt="SewaPro booking and rental management interface"
+                                loading="lazy" decoding="async"></button>
+                        <div class="project-meta">
+                            <p class="project-type" data-i18n="sewaType">BOOKING &amp; RENTAL MANAGEMENT</p>
                             <h3>SewaPro</h3>
                             <p class="project-desc" data-i18n="sewaDesc">Studio bookings and photography equipment
                                 rentals, brought together in one practical management system.</p>
-                        </div><button class="text-link" data-open-project="sewapro"><span data-i18n="caseStudy">View
-                                case study</span><span>↗</span></button>
-                    </div>
-                    <div class="project-tags" data-stagger><span>Laravel</span><span>MySQL</span><span>Tailwind
-                            CSS</span><span>JavaScript</span></div>
-                </article>
-                <article class="project project-offset reveal" data-project="rastrada">
-                    <button class="project-visual" data-open-project="rastrada"
-                        aria-label="Open RASTRADA case study"><img class="project-screenshot"
-                            src="assets/images/rastrada.png"
-                            alt="RASTRADA decision support and beneficiary monitoring interface" loading="lazy"
-                            decoding="async"></button>
-                    <div class="project-meta">
-                        <div>
-                            <p class="project-type" data-i18n="rasType">DECISION SUPPORT & MONITORING</p>
-                            <h3>SPK & Monitoring<br>RASTRADA</h3>
+                        </div>
+                        <div class="project-tags" data-stagger><span>Laravel</span><span>MySQL</span><span>Tailwind
+                                CSS</span><span>JavaScript</span></div>
+                        <div class="project-actions">
+                            <button class="text-link" data-open-project="sewapro"><span data-i18n="caseStudy">View case
+                                    study</span><span>↗</span></button>
+                            <a class="text-link repo-link" data-repo="sewapro" href="#" target="_blank"
+                                rel="noopener noreferrer" hidden><svg class="repo-icon" viewBox="0 0 16 16" width="14"
+                                    height="14" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg><span data-i18n="repoLink">GitHub</span><span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="project reveal" data-project="rastrada">
+                        <button class="project-visual" data-open-project="rastrada"
+                            aria-label="Open RASTRADA case study"><img class="project-screenshot"
+                                src="assets/images/rastrada.png"
+                                alt="RASTRADA decision support and beneficiary monitoring interface" loading="lazy"
+                                decoding="async"></button>
+                        <div class="project-meta">
+                            <p class="project-type" data-i18n="rasType">DECISION SUPPORT &amp; MONITORING</p>
+                            <h3>SPK &amp; Monitoring<br>RASTRADA</h3>
                             <p class="project-desc" data-i18n="rasDesc">A decision support and beneficiary monitoring
                                 system, developed as a collaborative academic project.</p>
-                        </div><button class="text-link" data-open-project="rastrada"><span data-i18n="caseStudy">View
-                                case study</span><span>↗</span></button>
-                    </div>
-                    <div class="project-tags" data-stagger>
-                        <span>Laravel</span><span>MySQL</span><span>TOPSIS</span><span>Bootstrap</span>
-                    </div>
-                </article>
-                <article class="project project-offset project-third reveal" data-project="atm">
-                    <button class="project-visual" data-open-project="atm"
-                        aria-label="Open ATM Sparepart Monitoring case study"><img class="project-screenshot"
-                            src="assets/images/sparepart.png" alt="ATM spare-part inventory monitoring interface"
-                            loading="lazy" decoding="async"></button>
-                    <div class="project-meta">
-                        <div>
+                        </div>
+                        <div class="project-tags" data-stagger>
+                            <span>Laravel</span><span>MySQL</span><span>TOPSIS</span><span>Bootstrap</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="text-link" data-open-project="rastrada"><span data-i18n="caseStudy">View case
+                                    study</span><span>↗</span></button>
+                            <a class="text-link repo-link" data-repo="rastrada" href="#" target="_blank"
+                                rel="noopener noreferrer" hidden><svg class="repo-icon" viewBox="0 0 16 16" width="14"
+                                    height="14" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg><span data-i18n="repoLink">GitHub</span><span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="project reveal" data-project="atm">
+                        <button class="project-visual" data-open-project="atm"
+                            aria-label="Open ATM Sparepart Monitoring case study"><img class="project-screenshot"
+                                src="assets/images/sparepart.png" alt="ATM spare-part inventory monitoring interface"
+                                loading="lazy" decoding="async"></button>
+                        <div class="project-meta">
                             <p class="project-type" data-i18n="atmType">INVENTORY MONITORING</p>
                             <h3>ATM Sparepart<br>Monitoring</h3>
                             <p class="project-desc" data-i18n="atmDesc">An inventory monitoring application developed
                                 during a web developer internship.</p>
-                        </div><button class="text-link" data-open-project="atm"><span data-i18n="caseStudy">View case
-                                study</span><span>↗</span></button>
-                    </div>
-                    <div class="project-tags" data-stagger><span>PHP
-                            Native</span><span>MySQL</span><span>Bootstrap</span>
-                    </div>
-                </article>
+                        </div>
+                        <div class="project-tags" data-stagger><span>PHP
+                                Native</span><span>MySQL</span><span>Bootstrap</span></div>
+                        <div class="project-actions">
+                            <button class="text-link" data-open-project="atm"><span data-i18n="caseStudy">View case
+                                    study</span><span>↗</span></button>
+                            <a class="text-link repo-link" data-repo="atm" href="#" target="_blank"
+                                rel="noopener noreferrer" hidden><svg class="repo-icon" viewBox="0 0 16 16" width="14"
+                                    height="14" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg><span data-i18n="repoLink">GitHub</span><span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="project reveal" data-project="booking">
+                        <button class="project-visual" data-open-project="booking"
+                            aria-label="Open Booking GOR case study"><img class="project-screenshot"
+                                src="assets/images/booking-gor.png" alt="Booking GOR badminton court booking interface"
+                                loading="lazy" decoding="async"></button>
+                        <div class="project-meta">
+                            <p class="project-type" data-i18n="bookingType">COURT BOOKING SYSTEM</p>
+                            <h3>Booking GOR</h3>
+                            <p class="project-desc" data-i18n="bookingDesc">A badminton court booking system with live
+                                availability, double-booking prevention, admin confirmation, and revenue reports.</p>
+                        </div>
+                        <div class="project-tags" data-stagger>
+                            <span>Laravel</span><span>MySQL</span><span>Bootstrap</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="text-link" data-open-project="booking"><span data-i18n="caseStudy">View case
+                                    study</span><span>↗</span></button>
+                            <a class="text-link repo-link" data-repo="booking" href="#" target="_blank"
+                                rel="noopener noreferrer" hidden><svg class="repo-icon" viewBox="0 0 16 16" width="14"
+                                    height="14" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg><span data-i18n="repoLink">GitHub</span><span>↗</span></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="project-nav">
+                    <button class="project-arrow" data-dir="-1" aria-label="Previous project" disabled>←</button>
+                    <button class="project-arrow" data-dir="1" aria-label="Next project">→</button>
+                </div>
             </div>
         </section>
 

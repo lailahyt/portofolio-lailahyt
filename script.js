@@ -33,7 +33,10 @@ const copy = {
         rasDesc: 'A decision support and beneficiary monitoring system, developed as a collaborative academic project.',
         atmType: 'INVENTORY MONITORING',
         atmDesc: 'An inventory monitoring application developed during a web developer internship.',
+        bookingType: 'COURT BOOKING SYSTEM',
+        bookingDesc: 'A badminton court booking system with live availability, double-booking prevention, admin confirmation, and revenue reports.',
         caseStudy: 'View case study',
+        repoLink: 'GitHub',
         skillsLabel: 'TOOLS OF THE TRADE',
         skillsTitle: 'A grounded<br><em>toolkit.</em>',
         skillsIntro: 'Technologies I’ve used to build and support web applications.',
@@ -76,7 +79,10 @@ const copy = {
         rasDesc: 'Sistem pendukung keputusan dan pemantauan penerima manfaat yang dikembangkan sebagai proyek akademik kolaboratif.',
         atmType: 'PEMANTAUAN INVENTARIS',
         atmDesc: 'Aplikasi pemantauan inventaris yang dikembangkan selama magang sebagai web developer.',
+        bookingType: 'SISTEM PEMESANAN LAPANGAN',
+        bookingDesc: 'Sistem pemesanan lapangan bulutangkis dengan jadwal kosong yang terlihat langsung, pencegahan pesanan ganda, konfirmasi admin, dan laporan pendapatan.',
         caseStudy: 'Lihat studi kasus',
+        repoLink: 'GitHub',
         skillsLabel: 'PERANGKAT KERJA',
         skillsTitle: 'Perangkat kerja<br>yang <em>teruji.</em>',
         skillsIntro: 'Teknologi yang pernah saya gunakan untuk membangun dan mendukung aplikasi web.',
@@ -102,7 +108,19 @@ const projects = {
     atm: {
         en: { title: 'ATM Sparepart Monitoring', subtitle: 'Inventory Monitoring Application', body: 'An inventory monitoring web application developed during a web developer internship to support ATM spare-part stock monitoring.', contribution: 'Work described includes responsive frontend development, stock calculations, search and filtering, form validation, and PHP/MySQL integration. Company materials require approval before publication.', tags: ['PHP Native', 'MySQL', 'Bootstrap'] },
         id: { title: 'ATM Sparepart Monitoring', subtitle: 'Aplikasi Pemantauan Inventaris', body: 'Aplikasi web pemantauan inventaris yang dikembangkan selama magang sebagai web developer untuk mendukung pemantauan stok suku cadang ATM.', contribution: 'Pekerjaan yang disebutkan mencakup pengembangan frontend responsif, perhitungan stok, pencarian dan penyaringan, validasi formulir, serta integrasi PHP/MySQL. Materi perusahaan perlu mendapat izin sebelum dipublikasikan.', tags: ['PHP Native', 'MySQL', 'Bootstrap'] }
+    },
+    booking: {
+        en: { title: 'Booking GOR', subtitle: 'Badminton Court Booking System', body: 'A web app for booking badminton courts by the hour. Customers check open time slots, book, and cancel before the deadline. Admins confirm bookings, add manual bookings that come in through WhatsApp, and view revenue reports with Excel and PDF export. The system blocks double bookings and automatically cancels bookings that are not confirmed in time.', tags: ['Laravel', 'MySQL', 'Bootstrap'] },
+        id: { title: 'Booking GOR', subtitle: 'Sistem Pemesanan Lapangan Bulutangkis', body: 'Aplikasi web untuk memesan lapangan bulutangkis per jam. Pelanggan bisa melihat jam kosong, memesan, dan membatalkan sebelum batas waktu. Admin mengonfirmasi booking, menambah booking manual dari WhatsApp, dan melihat laporan pendapatan dengan ekspor Excel dan PDF. Sistem mencegah pesanan ganda dan otomatis membatalkan booking yang tidak dikonfirmasi tepat waktu.', tags: ['Laravel', 'MySQL', 'Bootstrap'] }
     }
+};
+
+// GitHub repository for each project. Leave a value empty ('') to hide that project's GitHub button.
+const repoUrls = {
+    sewapro: 'https://github.com/lailahyt/sewapro-web-app',
+    rastrada: 'https://github.com/lailahyt/Sistem-Pendukung-Keputusan-dan-Monitoring-Penerima-Rastrada-Menggunakan-TOPSIS',
+    atm: 'https://github.com/lailahyt/Aplikasi-Monitoring-Stok-Sparepart-Berbasis-Web',
+    booking: 'https://github.com/lailahyt/booking-gor'
 };
 
 // CV files: put both PDFs in assets/cv/ with exactly these names.
@@ -151,6 +169,17 @@ function setLanguage(lang) {
         if (btn.tagName !== 'BUTTON' || !btn.classList.contains('project-visual')) return;
         const name = projects[btn.dataset.openProject][lang].title;
         btn.setAttribute('aria-label', lang === 'en' ? `Open ${name} case study` : `Buka studi kasus ${name}`);
+    });
+
+    document.querySelectorAll('.repo-link').forEach(link => {
+        const name = projects[link.dataset.repo][lang].title;
+        link.setAttribute('aria-label', lang === 'en' ? `View ${name} source code on GitHub` : `Lihat kode sumber ${name} di GitHub`);
+    });
+    const projectList = document.querySelector('.project-list');
+    if (projectList) projectList.setAttribute('aria-label', lang === 'en' ? 'Projects' : 'Proyek');
+    document.querySelectorAll('.project-arrow').forEach(btn => {
+        const next = btn.dataset.dir === '1';
+        btn.setAttribute('aria-label', lang === 'en' ? (next ? 'Next project' : 'Previous project') : (next ? 'Proyek berikutnya' : 'Proyek sebelumnya'));
     });
 
     const cvLink = document.getElementById('cv-link');
@@ -307,7 +336,18 @@ const revealObserver = new IntersectionObserver(entries => entries.forEach(entry
     entry.target.classList.add('visible');
     revealObserver.unobserve(entry.target);
 }), { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal:not(.project)').forEach(el => revealObserver.observe(el));
+
+// Project cards sit in a horizontal scroller, so reveal them together once the list is on screen
+// (otherwise cards that are off to the side stay hidden and nothing hints that you can scroll).
+const projectListEl = document.querySelector('.project-list');
+if (projectListEl) {
+    new IntersectionObserver((entries, observer) => {
+        if (!entries.some(entry => entry.isIntersecting)) return;
+        projectListEl.querySelectorAll('.project').forEach(card => card.classList.add('visible'));
+        observer.disconnect();
+    }, { threshold: 0.12 }).observe(projectListEl);
+}
 
 /* ------------------------------------------------------------------
    Motion: gentle 3D tilt on project previews (mouse / trackpad only)
@@ -326,6 +366,38 @@ if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').mat
             card.style.removeProperty('--ry');
         });
     });
+}
+
+/* ------------------------------------------------------------------
+   Projects: GitHub links + horizontal scroll arrows
+------------------------------------------------------------------ */
+document.querySelectorAll('.repo-link').forEach(link => {
+    const url = repoUrls[link.dataset.repo];
+    if (!url) return;
+    link.href = url;
+    link.hidden = false;
+});
+
+const projectList = document.querySelector('.project-list');
+const arrows = document.querySelectorAll('.project-arrow');
+
+function updateArrows() {
+    if (!projectList) return;
+    const max = projectList.scrollWidth - projectList.clientWidth - 2;
+    arrows.forEach(btn => {
+        btn.disabled = btn.dataset.dir === '-1' ? projectList.scrollLeft <= 2 : projectList.scrollLeft >= max;
+    });
+}
+
+if (projectList) {
+    arrows.forEach(btn => btn.addEventListener('click', () => {
+        const card = projectList.querySelector('.project');
+        const step = card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(projectList).columnGap || 0) : projectList.clientWidth * .8;
+        projectList.scrollBy({ left: Number(btn.dataset.dir) * step, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }));
+    projectList.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
 }
 
 /* ------------------------------------------------------------------
